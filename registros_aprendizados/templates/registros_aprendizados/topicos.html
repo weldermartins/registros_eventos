@@ -1,0 +1,16 @@
+{% extends 'registros_aprendizados/base.html' %}
+
+{% block content %}
+  
+  <p>Tópicos</p>
+  
+  <ul>
+    {% for topico in topicos %}
+	  <li>{{ topico }}</li>
+	{% empty %}   
+	  <li> Nenhum tópico adicionado ainda. </li>
+	{% endfor %}
+    
+  </ul>
+
+{% endblock content %}

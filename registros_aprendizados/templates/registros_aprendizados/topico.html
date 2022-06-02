@@ -1,0 +1,20 @@
+{% extends 'registros_aprendizados/base.html' %}
+
+{% block content %}
+  <p>Tópico: {{ topico }}</p>
+  
+  <p>Assuntos:</p>
+  <ul>
+    {% for assunto in assuntos %}
+	  <li>
+	    <p> {{ assunto.data|date:'M d, Y H:i' }}</p>
+		<p>{{ assunto.assunto|linebreaks}}</p>
+	  </li>
+	{% empty %}  
+	  <li>
+	    Ainda não há assuntos para este tópico
+	  </li>
+	{% endfor %}  
+  </ul>
+
+{% endblock content %}

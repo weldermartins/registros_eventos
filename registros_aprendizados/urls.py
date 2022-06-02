@@ -9,5 +9,11 @@ urlpatterns = [
     # Diz ao python para procurar uma url sem nada entre o início
     # e o fim da url.
     path('', views.index, name='index'),
+    
+    # Mostra todos os tópicos
+    path('topicos/', views.topicos, name='topicos')
+    
+    # Mostra um tópico individual por id e seus assuntos
+    path('topico/<int:topico_id>', views.topic, name='topico')
 
     ]    
