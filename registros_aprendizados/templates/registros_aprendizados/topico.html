@@ -7,7 +7,7 @@
   <ul>
     {% for assunto in assuntos %}
 	  <li>
-	    <p> {{ assunto.data|date:'M d, Y H:i' }}</p>
+	    <p>{{ assunto.data|date:'M d, Y H:i' }}</p>
 		<p>{{ assunto.assunto|linebreaks}}</p>
 	  </li>
 	{% empty %}  

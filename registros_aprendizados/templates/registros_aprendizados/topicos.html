@@ -6,7 +6,9 @@
   
   <ul>
     {% for topico in topicos %}
-	  <li>{{ topico }}</li>
+	  <li>
+	    <a href="{% url 'registros_aprendizados:topico' topico.id %}">{{ topico }}</a>
+	  </li>
 	{% empty %}   
 	  <li> Nenhum tópico adicionado ainda. </li>
 	{% endfor %}

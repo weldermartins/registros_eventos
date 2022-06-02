@@ -11,9 +11,12 @@ urlpatterns = [
     path('', views.index, name='index'),
     
     # Mostra todos os tópicos
-    path('topicos/', views.topicos, name='topicos')
+    path('topicos/', views.topicos, name='topicos'),
     
     # Mostra um tópico individual por id e seus assuntos
-    path('topico/<int:topico_id>', views.topic, name='topico')
+    path('topico/<int:topico_id>', views.topico, name='topico'),
 
-    ]    
+    # Pagina para adicinar um novo tópico
+    path('novo_topico/', views.novo_topico, name='novo_topico'),
+
+    ]
