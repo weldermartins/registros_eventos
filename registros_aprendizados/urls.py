@@ -2,12 +2,12 @@
 from django.urls import path
 from . import views
 
-app_name = 'learning_logs'
+app_name = 'registros_aprendizados'
 
 urlpatterns = [
     # Página inicial.
     # Diz ao python para procurar uma url sem nada entre o início
     # e o fim da url.
-    path('', views.home, name='index'),
+    path('', views.index, name='index'),
 
     ]    

@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
-def home(request):
+def index(request):
     """A página inicial do registros de aprendizados"""
-    return render(request, 'registros_aprendizados/home.html')
+    return render(request, 'registros_aprendizados/index.html')
