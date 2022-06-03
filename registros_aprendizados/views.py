@@ -6,10 +6,10 @@ from .models import Topico
 from .forms import TopicoForm
 
 
-
 def index(request):
     """A página inicial do registros de aprendizados"""
     return render(request, 'registros_aprendizados/index.html')
+
 
 def topicos(requisicao):
     """Mostra todos os tópicos."""
@@ -36,7 +36,7 @@ def novo_topico(requisicao):
         form = TopicoForm(requisicao.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('registros_aprendizado:topicos'))
+            return HttpResponseRedirect(reverse('registros_aprendizados:topicos'))
     contexto = {'form': form}
-    return render(requisicao, 'registros_aprendizados/novo_topico', contexto)
+    return render(requisicao, 'registros_aprendizados/novo_topico.html', contexto)
 
