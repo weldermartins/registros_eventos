@@ -4,6 +4,9 @@
   <p>Tópico: {{ topico }}</p>
   
   <p>Assuntos:</p>
+  <p>
+	  <a href="{% url 'registros_aprendizados:novo_assunto' topico.id %}">Novo Assunto</a>
+  </p>
   <ul>
     {% for assunto in assuntos %}
 	  <li>
