@@ -23,6 +23,6 @@ urlpatterns = [
     path('novo_assunto/<int:topico_id>/', views.novo_assunto, name='novo_assunto'),
 
     # Editando entradas
-    path('editar_assunto/<int:editar_assunto>/', views.editar_assunto)
+    path('editar_assunto/<int:editar_assunto>/', views.editar_assunto, name="editar_assunto")
 
     ]
