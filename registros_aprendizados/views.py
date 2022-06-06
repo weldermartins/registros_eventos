@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-from .models import Topico
+from .models import Topico, Assuntos
 from .forms import TopicoForm, AssuntosForm
 
 
@@ -65,5 +65,20 @@ def novo_assunto(requisicao, topico_id):
     contexto = {'topico': topico, 'form': form}
     return render(requisicao, 'registros_aprendizados/novo_assunto.html', contexto)
 
-def 
 
+def editar_assunto(requisicao, assunto_id):
+    """Edita uma entrada existente."""
+    assunto = Assuntos.objects.get(id=assunto_id)
+    topico = assunto.topico
+
+    if requisicao.method != 'POST':
+        # Requisição inicial; preeche previamente o formulário com a entrada atual
+        form = AssuntosForm(instance=assunto)
+    else:
+        # dados de POST submetidos; processa os dados
+        form = AssuntosForm(instance=assunto, data=requisicao.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('registros_aprendizados:topico', args=[topico.id]))
+    contexto = {'assunto': assunto, 'topico': topico, 'form': form}
+    return render(requisicao, 'registros_aprendizados/editar_assunto.html', contexto)

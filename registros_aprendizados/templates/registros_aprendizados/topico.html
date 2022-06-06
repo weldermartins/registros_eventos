@@ -12,6 +12,9 @@
 	  <li>
 	    <p>{{ assunto.data|date:'M d, Y H:i' }}</p>
 		<p>{{ assunto.assunto|linebreaks}}</p>
+		<p>
+			<a href="{% url 'registros_aprendizados:editar_assunto' assunto.id %}">Editar Assunto</a>
+		</p>
 	  </li>
 	{% empty %}  
 	  <li>
