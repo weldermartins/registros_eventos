@@ -20,7 +20,9 @@ urlpatterns = [
     path('novo_topico/', views.novo_topico, name='novo_topico'),
 
     # Novos assuntos
-    path('novo_assunto/<int:topico_id>/', views.novo_assunto, name='novo_assunto')
+    path('novo_assunto/<int:topico_id>/', views.novo_assunto, name='novo_assunto'),
 
+    # Editando entradas
+    path('editar_assunto/<int:editar_assunto>/', views.editar_assunto)
 
     ]
