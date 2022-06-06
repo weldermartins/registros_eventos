@@ -65,3 +65,5 @@ def novo_assunto(requisicao, topico_id):
     contexto = {'topico': topico, 'form': form}
     return render(requisicao, 'registros_aprendizados/novo_assunto.html', contexto)
 
+def 
+
