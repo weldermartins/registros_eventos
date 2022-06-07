@@ -1,5 +1,13 @@
 <p>
  <a href="{% url 'registros_aprendizados:index' %}">Registro de aprendizados</a> -		
- <a href="{% url 'registros_aprendizados:topicos' %}">Tópicos</a>
+ <a href="{% url 'registros_aprendizados:topicos' %}">Tópicos</a> -
+
+ {% if user.is_authenticated %}
+   Olá, {{ user.username }}.
+    <a href="{% url 'usuario:sair' %}"> Sair</a>
+ {% else %}
+   <a href="{% url 'usuario:login' %}">Logar</a>
+ {% endif %}
+
 </p>
 {% block content%}{% endblock content %}

@@ -69,6 +69,7 @@ def novo_assunto(requisicao, topico_id):
 def editar_assunto(requisicao, assunto_id):
     """Edita uma entrada existente."""
     assunto = Assuntos.objects.get(id=assunto_id)
+    # vincula o assunto ao id do topico.
     topico = assunto.topico
 
     if requisicao.method != 'POST':
