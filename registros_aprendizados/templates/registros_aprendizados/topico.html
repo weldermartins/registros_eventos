@@ -1,9 +1,9 @@
 {% extends 'registros_aprendizados/base.html' %}
 
 {% block content %}
-  <p>Tópico: {{ topico }}</p>
-  
-  <p>Assuntos:</p>
+  <p><h2>Tópico:{{ topico }}</h2></p>
+  </br>
+  <h3><p>Assuntos:</p></h3>
   <p>
 	  <a href="{% url 'registros_aprendizados:novo_assunto' topico.id %}">Novo Assunto</a>
   </p>

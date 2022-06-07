@@ -1,0 +1,11 @@
+{% extends 'registros_aprendizados/base.html' %}
+
+{% block content %}
+  <form method="post" action="{% url 'usuario:cadastro' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Inserir</button>
+    <input type="hidden" name="next" value="{% url 'registros_aprendizados:index' %}"  />
+  </form>
+
+{% endblock content %}

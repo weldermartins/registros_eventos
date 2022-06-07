@@ -13,4 +13,7 @@ urlpatterns = [
     # Sair da página
     path('/sair/', views.logout_view, name='sair'),
 
+    # Cadastro de usuário
+    path('cadastro/', views.cadastro, name='cadastro')
+
     ]
