@@ -23,7 +23,7 @@ def cadastro(requisicao):
         if form.is_valid():
             novo_usuario = form.save()
             # Faz login de usuário e o redireciona para a página inicial
-            usuario_autenticado = authenticate(username=novo_usuario.usernamame , password=requisicao.post['password1'])
+            usuario_autenticado = authenticate(username=novo_usuario.usernamame, password=requisicao.post['password1'])
             login(requisicao, usuario_autenticado)
             return HttpResponseRedirect(reverse('registros_aprendizados:index'))
 

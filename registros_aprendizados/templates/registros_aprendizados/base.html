@@ -1,14 +1,58 @@
-<p>
- <a href="{% url 'registros_aprendizados:index' %}">Registro de aprendizados</a> -		
- <a href="{% url 'registros_aprendizados:topicos' %}">Tópicos</a> -
+{% load bootstrap3 %}
 
- {% if user.is_authenticated %}
-    Olá, {{ user.username }}.
-    <a href="{% url 'usuario:sair' %}"> Sair</a>
- {% else %}
-    <a href="{% url 'usuario:cadastro' %}">Cadastro</a>
-    <a href="{% url 'usuario:login' %}">Logar</a>
- {% endif %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device.width, initial-scale=1">
 
-</p>
-{% block content%}{% endblock content %}
+        <title>Registro de aprendizado</title>
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+
+
+    <body>
+        <nav class="navbar navbar-default navbar-static-top">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                </button>
+                  <a class="navbar-brand" href="{% url 'registros_aprendizados:index' %}">Registro de aprendizados</a>
+              </div>
+
+              <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                      <li><a href="{% url 'registros_aprendizados:topicos' %}">Tópicos</a></li>
+                  </ul>
+
+                  <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                        <li><a>Olá, {{ user.username }}.</a></li>
+                        <li><a href="{% url 'usuario:sair' %}">Sair</a></li>
+                    {% else %}
+                        <li><a href="{% url 'usuario:cadastro' %}">Cadastro</a></li>
+                        <li><a href="{% url 'usuario:login' %}">Logar</a></li>
+                    {% endif %}
+                   </ul>
+               </div><!--/.nav-collapse -->
+                </ul>
+              </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+
+        <div class="container">
+            <div class="page-header">
+                {% block header %}{% endblock header%}
+            </div>
+            <div>
+                {% block content %}{% endblock content%}
+            </div>
+        </div><!-- /container -->
+
+    </body>
+</html>
+

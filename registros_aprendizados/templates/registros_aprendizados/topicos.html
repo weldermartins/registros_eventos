@@ -1,19 +1,26 @@
 {% extends 'registros_aprendizados/base.html' %}
 
+{% block header %}
+	<h3>Tópicos</h3>
+{% endblock header %}
+
 {% block content %}
-  
-  <p>Tópicos</p>
-  
+
   <ul>
     {% for topico in topicos %}
-	  <li>
-	    <a href="{% url 'registros_aprendizados:topico' topico.id %}">{{ topico }}</a>
-	  </li>
+	  <div class="panel panel-default">
+		  <div class="panel-heading">
+			  <h4>
+				<a href="{% url 'registros_aprendizados:topico' topico.id %}">{{ topico }}</a>
+			  </h4>
+		  </div>
+	  </div>
 	{% empty %}   
 	  <li> Nenhum tópico adicionado ainda. </li>
 	{% endfor %}
-    
   </ul>
-  <a href="{% url 'registros_aprendizados:novo_topico' %}">Inserir novo tópico</a>
+
+ <h4><a href="{% url 'registros_aprendizados:novo_topico' %}">Inserir</a></h4>
+
 
 {% endblock content %}

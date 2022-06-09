@@ -1,11 +1,18 @@
 {% extends "registros_aprendizados/base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h2>Incluir novo tópico</h2>
+{% endblock header %}
 
 {% block content%}
   <p>Add novo tópico</p>
 
-  <form action="{% url 'registros_aprendizados:novo_topico' %}" method="post">
+  <form action="{% url 'registros_aprendizados:novo_topico' %}" method="post" class="form">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button name="submit">inserir</button>
+    {% bootstrap_form form %}
+    {% buttons %}
+      <button name="submit" class="btn btn-primary">inserir</button>
+    {% endbuttons %}
   </form>
 {% endblock content%}

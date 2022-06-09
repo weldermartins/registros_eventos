@@ -1,13 +1,23 @@
 {% extends "registros_aprendizados/base.html" %}	
 
+{% block header %}
+  <div class="jumbotron">
+    <h1>Acompanhe seu aprendizado.</h1>
+  </div>
+{% endblock header %}
+
+
 {% block content %}
 
-  </br>
 
-  <h3>
-    <p> Com o registro de aprendizado será mais fácil para consultar 
-      as anotações de um determinado Tópico.
-	</p>
-  </h3>
+
+  <h2>
+    <a href="{% url 'usuario:cadastro' %}">Faça seu cadastro</a>
+    seu próprio Registro de Aprendizagem e liste os tópicos sobre os quais você está aprendendo.
+  </h2>
+  <h2>
+    Sempre que você aprender algo novo sobre um tópico, faça uma entrada,
+    resumindo o que você aprendeu.
+  </h2>
 
 {% endblock content %}
