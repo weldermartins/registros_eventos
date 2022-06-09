@@ -1,7 +1,8 @@
 {% extends 'registros_aprendizados/base.html' %}
 
 {% block content %}
-  <p><h2>Tópico:{{ topico }}</h2></p>
+  <p><h2>Tópico: {{ topico }}</h2></p>
+  <a href="{% url 'registros_aprendizados:editar_topico' topico.id %}">Editar Tópico</a>
   </br>
   <h3><p>Assuntos:</p></h3>
   <p>
@@ -13,7 +14,8 @@
 	    <p>{{ assunto.data|date:'M d, Y H:i' }}</p>
 		<p>{{ assunto.assunto|linebreaks}}</p>
 		<p>
-			<a href="{% url 'registros_aprendizados:editar_assunto' assunto.id %}">Editar Assunto</a>
+			<a href="{% url 'registros_aprendizados:editar_assunto' assunto.id %}">Editar</a> -
+			<a href="{% url 'registros_aprendizados:excluir_assunto' assunto.id %}">Excluir</a>
 		</p>
 	  </li>
 	{% empty %}  

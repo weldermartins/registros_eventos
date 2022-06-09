@@ -1,14 +1,18 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Topico(models.Model):
     """Um assunto sobre o qual o usuário está aprendendo."""
     texto = models.CharField(max_length=200)
     # Faz o input da data corrente
     data = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
         """Devolve uma representação em String do modelo."""
-        return self.texto        
+        return self.texto
+
 
 class Assuntos(models.Model):
     """Algo específico aprendido sobre um assunto."""
@@ -22,4 +26,3 @@ class Assuntos(models.Model):
     def __str__(self):
         """Devolve uma representação em string do modelo."""
         return self.assunto[:50] + "..."
-            
