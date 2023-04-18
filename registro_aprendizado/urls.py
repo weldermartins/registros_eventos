@@ -18,8 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # passando o controle de url para a aplicação registros_aprendizados.
-    path('', include('registros_aprendizados.urls')),
+    # passando o controle de url para a aplicação registro_aprendizados.
+    path('', include('registro_aprendizados.urls')),
 
     # passando o controle de url para a aplicação usuario.
     path('', include('usuario.urls', namespace='usuario')),

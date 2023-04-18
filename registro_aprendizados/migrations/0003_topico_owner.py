@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('registros_aprendizados', '0002_rename_entry_assuntos'),
+        ('registro_aprendizados', '0002_rename_entry_assuntos'),
     ]
 
     operations = [

@@ -4,3 +4,5 @@ venv/
 # git rm -rf --cached .idea - Remove o cache
 commad.txt
 .idea
+usuario/migrations
+registro_aprendizados/migrations

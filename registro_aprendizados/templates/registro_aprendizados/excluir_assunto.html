@@ -1,5 +1,5 @@
 <div>
-  <form action="{% url 'registros_aprendizados:excluir_assunto' assunto.id %}" method="post">
+  <form action="{% url 'registro_aprendizados:excluir_assunto' assunto.id %}" method="post">
     {% csrf_token %}
     <input type="submit" value="Sim" />
     <a href="/">Cancelar</a>

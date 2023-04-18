@@ -1,4 +1,4 @@
-{% extends 'registros_aprendizados/base.html' %}
+{% extends 'registro_aprendizados/base.html' %}
 {% load bootstrap3 %}
 
 {% block header %}
@@ -13,7 +13,7 @@
       <button name="submit" class="btn btn-primary">logar</button>
     {% endbuttons %}
 
-    <input type="hidden" name="next" value="{% url 'registros_aprendizados:index' %}">
+    <input type="hidden" name="next" value="{% url 'registro_aprendizados:index' %}">
   </form>
 
 {% endblock content %}

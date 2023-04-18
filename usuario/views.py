@@ -8,7 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 def logout_view(requisicao):
     """Faz logout do usuário."""
     logout(requisicao)
-    return HttpResponseRedirect(reverse('registros_aprendizados:index'))
+    return HttpResponseRedirect(reverse('registro_aprendizados:index'))
 
 
 def cadastro(requisicao):
@@ -25,7 +25,7 @@ def cadastro(requisicao):
             # Faz login de usuário e o redireciona para a página inicial
             usuario_autenticado = authenticate(username=novo_usuario.usernamame, password=requisicao.post['password1'])
             login(requisicao, usuario_autenticado)
-            return HttpResponseRedirect(reverse('registros_aprendizados:index'))
+            return HttpResponseRedirect(reverse('registro_aprendizados:index'))
 
     contexto = {'form': form}
     return render(requisicao, 'usuario/cadastro.html', contexto)

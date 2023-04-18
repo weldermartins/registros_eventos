@@ -1,4 +1,4 @@
-{% extends 'registros_aprendizados/base.html' %}
+{% extends 'registro_aprendizados/base.html' %}
 
 {% block header %}
   <h3>{{ topico }}</h3>
@@ -7,7 +7,7 @@
 
 {% block content %}
   <p>
-    <a href="{% url 'registros_aprendizados:novo_assunto' topico.id %}">Novo Tópico</a>
+    <a href="{% url 'registro_aprendizados:novo_assunto' topico.id %}">Novo Tópico</a>
   </p>
 
   <ul>
@@ -17,8 +17,8 @@
 		  <h3>
         	{{ assunto.data|date:'M d, Y H:i' }}
         	<small>
-				<a href="{% url 'registros_aprendizados:editar_assunto' assunto.id %}">Editar</a> -
-				<a href="{% url 'registros_aprendizados:excluir_assunto' assunto.id %}">Excluir</a>
+				<a href="{% url 'registro_aprendizados:editar_assunto' assunto.id %}">Editar</a> -
+				<a href="{% url 'registro_aprendizados:excluir_assunto' assunto.id %}">Excluir</a>
 			</small>
 		</h3>
       </div>

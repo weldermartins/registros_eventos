@@ -1,0 +1,14 @@
+{% extends 'registro_aprendizados/base.html' %}
+
+{% block content %}
+  <p><a href="{% url 'registro_aprendizados:topico' topico.id %}">{{ topico }}</a></p>
+
+  <p>Editar assunto</p>
+
+  <form action="{% url 'registro_aprendizados:editar_assunto' assunto.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Salvar</button>
+  </form>
+
+{% endblock content %}

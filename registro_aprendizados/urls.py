@@ -1,8 +1,8 @@
-"""Define padrões de url para registros_aprendizados"""
+"""Define padrões de url para registro_aprendizados"""
 from django.urls import path
 from . import views
 
-app_name = 'registros_aprendizados'
+app_name = 'registro_aprendizados'
 
 urlpatterns = [
     # Página inicial.

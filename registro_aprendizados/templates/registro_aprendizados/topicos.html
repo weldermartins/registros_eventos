@@ -1,4 +1,4 @@
-{% extends 'registros_aprendizados/base.html' %}
+{% extends 'registro_aprendizados/base.html' %}
 
 {% block header %}
 	<h3>Tópicos</h3>
@@ -11,7 +11,7 @@
 	  <div class="panel panel-default">
 		  <div class="panel-heading">
 			  <h4>
-				<a href="{% url 'registros_aprendizados:topico' topico.id %}">{{ topico }}</a>
+				<a href="{% url 'registro_aprendizados:topico' topico.id %}">{{ topico }}</a>
 			  </h4>
 		  </div>
 	  </div>
@@ -20,7 +20,7 @@
 	{% endfor %}
   </ul>
 
- <h4><a href="{% url 'registros_aprendizados:novo_topico' %}">Inserir</a></h4>
+ <h4><a href="{% url 'registro_aprendizados:novo_topico' %}">Inserir</a></h4>
 
 
 {% endblock content %}

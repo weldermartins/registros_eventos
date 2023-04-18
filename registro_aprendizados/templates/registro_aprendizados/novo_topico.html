@@ -1,4 +1,4 @@
-{% extends "registros_aprendizados/base.html" %}
+{% extends "registro_aprendizados/base.html" %}
 {% load bootstrap3 %}
 
 {% block header %}
@@ -8,7 +8,7 @@
 {% block content%}
   <p>Add novo tópico</p>
 
-  <form action="{% url 'registros_aprendizados:novo_topico' %}" method="post" class="form">
+  <form action="{% url 'registro_aprendizados:novo_topico' %}" method="post" class="form">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% buttons %}

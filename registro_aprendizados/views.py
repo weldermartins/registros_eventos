@@ -9,14 +9,14 @@ from .forms import TopicoForm, AssuntosForm
 
 def index(request):
     """A página inicial do registros de aprendizados"""
-    return render(request, 'registros_aprendizados/index.html')
+    return render(request, 'registro_aprendizados/index.html')
 
 @login_required
 def topicos(requisicao):
     """Mostra todos os tópicos."""
     topicos = Topico.objects.filter(owner=requisicao.user).order_by('data')
     contexto = {'topicos': topicos}
-    return render(requisicao, 'registros_aprendizados/topicos.html', contexto)
+    return render(requisicao, 'registro_aprendizados/topicos.html', contexto)
 
 
 @login_required
@@ -29,7 +29,7 @@ def topico(requisicao, topico_id):
 
     assuntos = topico.assuntos_set.order_by('-data')
     contexto = {'topico': topico, 'assuntos': assuntos}
-    return render(requisicao, 'registros_aprendizados/topico.html', contexto)
+    return render(requisicao, 'registro_aprendizados/topico.html', contexto)
 
     
 # Toda requisição inicia-se com get, se for get gera um formulário vazio(33), carrega no contexto
@@ -49,9 +49,9 @@ def novo_topico(requisicao):
             novo_topico.owner = requisicao.user
             novo_topico.save()
             # procura a url tópicos
-            return HttpResponseRedirect(reverse('registros_aprendizados:topicos'))
+            return HttpResponseRedirect(reverse('registro_aprendizados:topicos'))
     contexto = {'form': form}
-    return render(requisicao, 'registros_aprendizados/novo_topico.html', contexto)
+    return render(requisicao, 'registro_aprendizados/novo_topico.html', contexto)
 
 
 @login_required
@@ -71,10 +71,10 @@ def novo_assunto(requisicao, topico_id):
             # vincula o assunto ao id do topico.
             novo_assunto.topico = topico
             novo_assunto.save()
-        return HttpResponseRedirect(reverse('registros_aprendizados:topico', args=[topico_id]))
+        return HttpResponseRedirect(reverse('registro_aprendizados:topico', args=[topico_id]))
 
     contexto = {'topico': topico, 'form': form}
-    return render(requisicao, 'registros_aprendizados/novo_assunto.html', contexto)
+    return render(requisicao, 'registro_aprendizados/novo_assunto.html', contexto)
 
 
 @login_required
@@ -94,9 +94,9 @@ def editar_assunto(requisicao, assunto_id):
         form = AssuntosForm(instance=assunto, data=requisicao.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('registros_aprendizados:topico', args=[topico.id]))
+            return HttpResponseRedirect(reverse('registro_aprendizados:topico', args=[topico.id]))
     contexto = {'assunto': assunto, 'topico': topico, 'form': form}
-    return render(requisicao, 'registros_aprendizados/editar_assunto.html', contexto)
+    return render(requisicao, 'registro_aprendizados/editar_assunto.html', contexto)
 
 @login_required
 def editar_topico(requisicao, topico_id):
@@ -113,9 +113,9 @@ def editar_topico(requisicao, topico_id):
         form = TopicoForm(instance=topico, data=requisicao.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('registros_aprendizados:topico', args=[topico.id]))
+            return HttpResponseRedirect(reverse('registro_aprendizados:topico', args=[topico.id]))
     contexto = {'topico': topico, 'form': form}
-    return render(requisicao, 'registros_aprendizados/editar_topico.html', contexto)
+    return render(requisicao, 'registro_aprendizados/editar_topico.html', contexto)
 
 
 def excluir_assunto(requisicao, assunto_id):
@@ -125,5 +125,5 @@ def excluir_assunto(requisicao, assunto_id):
 
     if requisicao.method == 'POST':
         assunto.delete()
-        return HttpResponseRedirect(reverse('registros_aprendizados:topico',  args=[topico.id]))
-    return render(requisicao, 'registros_aprendizados/excluir_assunto.html', contexto)
+        return HttpResponseRedirect(reverse('registro_aprendizados:topico',  args=[topico.id]))
+    return render(requisicao, 'registro_aprendizados/excluir_assunto.html', contexto)

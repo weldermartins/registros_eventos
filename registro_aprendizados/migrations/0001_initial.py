@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('assunto', models.TextField()),
                 ('data', models.DateTimeField(auto_now_add=True)),
-                ('topico', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='registros_aprendizados.topico')),
+                ('topico', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='registro_aprendizados.topico')),
             ],
             options={
                 'verbose_name_plural': 'assunto',

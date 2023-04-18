@@ -1,0 +1,11 @@
+{% extends 'registro_aprendizados/base.html' %}
+
+{% block content %}
+
+  <form action="{% url 'registro_aprendizados:editar_topico' topico.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Salvar</button>
+  </form>
+
+{% endblock content %}
