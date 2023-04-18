@@ -5,4 +5,4 @@ venv/
 commad.txt
 .idea
 **/migrations/**
-**/migrations/__pycache__**/
+**/__pycache__
