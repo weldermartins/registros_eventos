@@ -10,6 +10,7 @@
 <br/>
 
 <h4><span style="color: gray">Requisitos de instalação</span></h4>
+
 * python -m pip install --upgrade pip
 * pip install django-bootstrap3
 * Instalação do Django está dentro de requirements.txt.
