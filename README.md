@@ -5,11 +5,11 @@ Fonte: https://nostarch.com/python-crash-course-3rd-edition
 
 <h4><span style="color: gray">A aplicação web permite criar anotações por tópicos, e controle de sessão por usuário.</span></h4>
 
- ![scheme](imagem/acesso.png)
+ ![scheme](registro_aprendizados/imagem/acesso.png)
 
- ![scheme](imagem/topico.png)
+ ![scheme](registro_aprendizados/imagem/topico.png)
 
- ![scheme](imagem/Assunto.png)
+ ![scheme](registro_aprendizados/imagem/Assunto.png)
 
 <br/>
 
@@ -18,7 +18,7 @@ Fonte: https://nostarch.com/python-crash-course-3rd-edition
 * python -m pip install --upgrade pip
 * pip install django-bootstrap3
 * Instalação do Django está dentro de requirements.txt.
-  * ![scheme](imagem/requirements.png)
+  * ![scheme](registro_aprendizados/imagem/requirements.png)
 * O projeto ao final deverá ter todas as dependências listadas para seu funcionamento.
-  * ![scheme](imagem/freeze.png)
+  * ![scheme](registro_aprendizados/imagem/freeze.png)
 
