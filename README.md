@@ -1,7 +1,9 @@
 # Registros de eventos
 
 
-<h4><span style="color: gray">A aplicação web permite criar anotações por tópicos.</span></h4>
+<h4><span style="color: gray">A aplicação web permite criar anotações por tópicos, e controle de sessão por usuário.</span></h4>
+
+ ![scheme](imagem/acesso.png)
 
  ![scheme](imagem/topico.png)
 
