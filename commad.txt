@@ -1,0 +1,2 @@
+# Removendo o cache
+git rm -rf --cached .idea
