@@ -1,5 +1,7 @@
 # Registros de eventos
 
+Fonte: https://nostarch.com/python-crash-course-3rd-edition
+
 
 <h4><span style="color: gray">A aplicação web permite criar anotações por tópicos, e controle de sessão por usuário.</span></h4>
 
