@@ -1,13 +1,13 @@
 {% extends 'registro_aprendizados/base.html' %}
 
 {% block header %}
-  <h3>{{ topico }}</h3>
+  <a href="{% url 'registro_aprendizados:topicos' %}">{{ topico }}</a>
 {% endblock header %}
 
 
 {% block content %}
   <p>
-    <a href="{% url 'registro_aprendizados:novo_assunto' topico.id %}">Novo Tópico</a>
+    <a href="{% url 'registro_aprendizados:novo_assunto' topico.id %}">Novo Assunto</a>
   </p>
 
   <ul>
